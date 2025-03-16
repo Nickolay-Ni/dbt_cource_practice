@@ -45,12 +45,3 @@ sources:
             description: Дата бронирования
           - name: total_amount
             description: Стоимость бронирования 
-        freshness:
-          warn_after:
-            count: 60000
-            period: hour
-          error_after:
-            count: 10000
-            period: day
-          filter: current_timestamp::date - book_date::date < 30000
-          loaded_at_field: book_date::timestamp
