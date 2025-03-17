@@ -1,0 +1,30 @@
+models:
+  - name: fct_ticket_flight
+    description: Факты билеты и рейсы
+    docs:
+      show: true
+      node_color: green
+    latest_version: 1
+    versions:
+      - v: 1
+    config:
+      contract: {enforced: true}
+    meta:
+      owner: "nik.vladimirov.90@internet.ru"
+      contact_tg: Nicolay_Ni
+      status: in_dev
+
+    columns:
+      - name: ticket_no
+        data_type: bpchar(13)
+        constraints:
+          - type: not_null
+      - name: flight_id
+        data_type: int4
+      - name: fare_conditions
+        data_type: varchar(10)
+      - name: amount
+        data_type: numeric(10,2)
+        constraints:
+          - type: check
+            expression: "amount > 0"
