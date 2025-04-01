@@ -2,7 +2,7 @@
       config(
         materialized = 'incremental',
         incremental_strategy = 'delete+insert',
-        unique_key = ['scheduled_departure']
+        unique_key = ['flight_id']
             ) 
 }}
 select
