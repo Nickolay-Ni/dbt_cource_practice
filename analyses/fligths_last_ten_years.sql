@@ -12,7 +12,7 @@ from
     {% set previus_date = current_date %}
 {% endif %}
 select
-    count(*) as cnt_flights
+    count(*) as {{adapter.quote('cnt_flights')}}
 from
     {{ ref('fct_flight_schedule') }}
 where 
