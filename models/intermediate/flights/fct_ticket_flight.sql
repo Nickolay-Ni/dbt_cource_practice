@@ -4,9 +4,9 @@
     )
 }}
 select
-    ticket_no,
-    flight_id,
-    fare_conditions,
-    amount
+  ticket_no,
+  flight_id,
+  fare_conditions,
+  amount
 from
-    {{ ref('stg_flights__ticket_flights') }}
+  {{ ref('stg_flights__ticket_flights') }}
