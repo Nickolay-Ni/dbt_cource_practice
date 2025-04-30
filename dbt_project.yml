@@ -30,7 +30,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
 models:
-  +post_hook: "
+  +post_hook: ["
         CREATE SCHEMA IF NOT EXISTS logs;
 
         CREATE TABLE IF NOT EXISTS {{ target.database }}.logs.dbt_logs (
@@ -44,7 +44,8 @@ models:
         VALUES (
             CURRENT_TIMESTAMP, 'finish run model', '{{ model.name }}'
         )
-      "
+      ",
+      "{{ check_dependencies2() }}"]
   dbt_cource_practice:
       +meta:
         owner: "dbt_project_yml@mail.com"
