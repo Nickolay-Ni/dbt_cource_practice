@@ -1,6 +1,14 @@
 {{
   config(
-    materialized = 'table'
+    materialized = 'table',
+    pre_hook = "
+            {% set unique_status = dbt_utils.get_column_values(
+              table = ref('stg_flights__flights'),
+              column = 'status'
+              ) %}
+
+            {% do log('Unique Statuses' ~ ' ' ~ unique_status, info=True) %}
+        "
     )
 }}
 select

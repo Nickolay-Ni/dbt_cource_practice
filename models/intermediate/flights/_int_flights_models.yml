@@ -8,7 +8,7 @@ models:
     versions:
       - v: 1
     config:
-      contract: {enforced: true}
+      contract: {enforced: false}
     meta:
       owner: "nik.vladimirov.90@internet.ru"
       contact_tg: Nicolay_Ni

@@ -1,0 +1,1 @@
+{{ dbt_utils.pretty_time() }}

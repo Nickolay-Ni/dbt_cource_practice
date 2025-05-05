@@ -10,6 +10,3 @@ select
     fare_conditions
 from 
     {{ source('demo_src', 'seats') }}
-
-
-    

@@ -17,16 +17,18 @@ sources:
       - name: airports
         description: Аэропорты
         Columns:
-        - name: airport_code
-          description: Код аэропорта
-        - name: airport_name
-          description: Название 
-        - name: city
-          description: Город
-        - name: coordinates
-          description: Координаты
-        - name: timezone
-          description: Временная зона
+          - name: airport_code
+            description: Код аэропорта
+            tests:
+              - dbt_utils.not_empty_string
+          - name: airport_name
+            description: Название 
+          - name: city
+            description: Город
+          - name: coordinates
+            description: Координаты
+          - name: timezone
+            description: Временная зона
       - name: seats
         description: Места в самолетах
         Columns:

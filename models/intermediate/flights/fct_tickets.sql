@@ -4,11 +4,7 @@
     )
 }}
 select
-    ticket_no,
-    book_ref,
-    passenger_id,
-    passenger_name,
-    contact_data
+    {{- show_columns_relation ('stg_flights__tickets') -}}
 from
     {{ ref('stg_flights__tickets') }}
 where 
