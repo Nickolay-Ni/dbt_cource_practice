@@ -1,0 +1,3 @@
+selectors:
+  - name: failed_test_with_their_models
+    definition: '1+result:fail'
